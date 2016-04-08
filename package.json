@@ -1,0 +1,13 @@
+{
+  "name": "hero-component-example",
+  "version": "1.0.0",
+  "description": "Demo project for ng-conf",
+  "author": "Pete Bacon Darwin",
+  "license": "MIT",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.0"
+  }
+}
