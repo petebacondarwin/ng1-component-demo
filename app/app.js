@@ -4,7 +4,11 @@ angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component',
   $locationProvider.html5Mode(true);
 }])
 
-.value('$routerRootComponent', 'myApp')
+.run(['$rootRouter', function($rootRouter) {
+  $rootRouter.config([
+    { path: '/...', component: 'myApp' }
+  ]);
+}])
 
 .component('myApp', {
   $routeConfig: [
