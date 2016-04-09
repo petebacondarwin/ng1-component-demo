@@ -5,3 +5,12 @@ body { margin: 2em; }
 body, input { color: #888; font-family: Cambria, Georgia; }
 input { font-size: 15px; }
 label { font-weight: bold; }
+
+nav a {
+  background-color: #369;
+  border-radius: 5px;
+  padding: 5px;
+  color: #DDD;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,4 +1,4 @@
-angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component', 'heroes'])
+angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component', 'myNavigationMenu.component', 'heroes'])
 
 .config(['$locationProvider', function($locationProvider) {
   $locationProvider.html5Mode(true);
@@ -17,7 +17,6 @@ angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component',
   ],
   template:
     '<h1>Heroes App</h1>' +
-    '<a ng-link="[\'Dashboard\']">Dashboard</a>&nbsp;' +
-    '<a ng-link="[\'EditHeroes\']">Edit Heroes</a>' +
+    '<my-navigation-menu></my-navigation-menu>' +
     '<ng-outlet></ng-outlet>'
 });
