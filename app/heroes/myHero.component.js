@@ -3,7 +3,7 @@ angular.module('myHero.component', [])
 .component('myHero', {
   template:
     '<div>' +
-      '<label>Name: <input type="text" ng-model="$ctrl.heroName" ng-change="$ctrl.changeName()"></label>&nbsp;' +
+      '<label>Name: <input type="text" ng-model="$ctrl.fullName" ng-change="$ctrl.changeName()"></label>&nbsp;' +
       '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>' +
     '</div>',
   bindings: {
@@ -19,12 +19,24 @@ function MyHero() {}
 
 MyHero.prototype = {
   $onChanges: function() {
-    this.heroName = this.hero.firstName + ' ' + this.hero.lastName;
-  },
-  updateHeroName: function() {
+    if (!sameName(splitName(this.fullName), this.hero)) {
+      this.fullName = getFullName(this.hero);
+    }
   },
   changeName: function() {
-    var names = this.heroName.split(' ');
-    this.onChangeName({firstName: names[0], lastName: names[1]});
+    this.onChangeName(splitName(this.fullName));
   }
 };
+
+function splitName(name) {
+  var match = /(\w+)\s*(.*)/.exec(name);
+  return { firstName: match[1], lastName: match[2] };
+}
+
+function getFullName(hero) {
+  return [hero.firstName, hero.lastName].join(' ').trim();
+}
+
+function sameName(a, b) {
+  return (a.firstName.trim() === b.firstName.trim() && a.lastName.trim() === b.lastName.trim());
+}
