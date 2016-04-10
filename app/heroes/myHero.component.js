@@ -4,13 +4,13 @@ angular.module('myHero.component', [])
   template:
     '<div>' +
       '<label>Name: <input type="text" ng-model="$ctrl.fullName" ng-blur="$ctrl.nameChanged()"></label>&nbsp;' +
-      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>' +
+      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onIsFavouriteChange()"></label>' +
     '</div>',
   bindings: {
     hero: '<',
-    onChangeName: '&',
+    onHeroChange: '&',
     isFavourite: '<',
-    onToggleFavourite: '&'
+    onIsFavouriteChange: '&'
   },
   controller: MyHero
 });
@@ -24,7 +24,7 @@ MyHero.prototype = {
     }
   },
   nameChanged: function() {
-    this.onChangeName(splitName(this.fullName));
+    this.onHeroChange({$event: splitName(this.fullName)});
   }
 };
 

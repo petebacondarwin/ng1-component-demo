@@ -8,8 +8,8 @@ angular.module('myHeroes.component', ['heroes.service', 'myFavouriteHeroes.compo
       '<my-hero ' +
           'hero="hero" ' +
           'is-favourite="$ctrl.isFavourite(hero)" ' +
-          'on-change-name="$ctrl.saveHero(hero, firstName, lastName)"' +
-          'on-toggle-favourite="$ctrl.toggleFavourite(hero)">' +
+          'on-hero-change="$ctrl.saveHero(hero, $event.firstName, $event.lastName)"' +
+          'on-is-favourite-change="$ctrl.toggleFavourite(hero)">' +
       '</my-hero>' +
     '</div>' +
     '<my-favourite-heroes></my-favourite-heroes>' +
