@@ -4,6 +4,7 @@ angular.module('myHeroes.component', ['heroes.service', 'myFavouriteHeroes.compo
   template:
   '<div>' +
     '<h2>Edit Heroes</h2>' +
+    '<p>Changes are saved when you press enter or leave the edit box.<br>Cancel changes by pressing escape.</p>' +
     '<div ng-repeat="hero in $ctrl.heroes track by hero.id">' +
       '<my-hero ' +
           'hero="hero" ' +
