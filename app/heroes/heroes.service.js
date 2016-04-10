@@ -8,7 +8,10 @@ angular.module('heroes.service', [])
     { id: 2, firstName: 'Bat', lastName: 'Girl' },
     { id: 3, firstName: 'Spider', lastName: 'Man' }
   ];
-  var favourites = {};
+  var favourites = {
+    1: true,
+    2: true
+  };
 
   return {
     getHeroes: function() {

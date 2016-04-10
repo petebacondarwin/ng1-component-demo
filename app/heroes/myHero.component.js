@@ -3,8 +3,8 @@ angular.module('myHero.component', [])
 .component('myHero', {
   template:
     '<div>' +
-      '<label>Name: <input type="text" ng-model="$ctrl.fullName" ng-change="$ctrl.changeName()"></label>&nbsp;' +
-      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>' +
+      '<label>Name: <input type="text" ng-model="$ctrl.fullName" ng-blur="$ctrl.nameChanged()"></label>&nbsp;' +
+      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>{{ $ctrl.isFavourite}}' +
     '</div>',
   bindings: {
     hero: '<',
@@ -18,12 +18,12 @@ angular.module('myHero.component', [])
 function MyHero() {}
 
 MyHero.prototype = {
-  $onChanges: function() {
-    if (!sameName(splitName(this.fullName), this.hero)) {
-      this.fullName = getFullName(this.hero);
+  $onChanges: function(changes) {
+    if (changes.hero) {
+      this.fullName = getFullName(changes.hero.currentValue);
     }
   },
-  changeName: function() {
+  nameChanged: function() {
     this.onChangeName(splitName(this.fullName));
   }
 };
@@ -35,8 +35,4 @@ function splitName(name) {
 
 function getFullName(hero) {
   return [hero.firstName, hero.lastName].join(' ').trim();
-}
-
-function sameName(a, b) {
-  return (a.firstName.trim() === b.firstName.trim() && a.lastName.trim() === b.lastName.trim());
 }

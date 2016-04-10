@@ -4,11 +4,11 @@ angular.module('myHeroes.component', ['heroes.service', 'myFavouriteHeroes.compo
   template:
   '<div>' +
     '<h2>Edit Heroes</h2>' +
-    '<div ng-repeat="hero in $ctrl.heroes track by $index">' +
+    '<div ng-repeat="hero in $ctrl.heroes track by hero.id">' +
       '<my-hero ' +
           'hero="hero" ' +
           'is-favourite="$ctrl.isFavourite(hero)" ' +
-          'on-change-name="$ctrl.updateHero(hero, firstName, lastName)"' +
+          'on-change-name="$ctrl.saveHero(hero, firstName, lastName)"' +
           'on-toggle-favourite="$ctrl.toggleFavourite(hero)">' +
       '</my-hero>' +
     '</div>' +
@@ -32,7 +32,7 @@ MyHeroes.prototype = {
       _this.heroes = heroes;
     });
   },
-  updateHero: function(hero, firstName, lastName) {
+  saveHero: function(hero, firstName, lastName) {
     this.heroesService.save(hero.id, firstName, lastName);
   },
   toggleFavourite: function(hero) {
