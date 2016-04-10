@@ -4,7 +4,7 @@ angular.module('myHero.component', [])
   template:
     '<div>' +
       '<label>Name: <input type="text" ng-model="$ctrl.fullName" ng-blur="$ctrl.nameChanged()"></label>&nbsp;' +
-      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>{{ $ctrl.isFavourite}}' +
+      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onToggleFavourite()"></label>' +
     '</div>',
   bindings: {
     hero: '<',
