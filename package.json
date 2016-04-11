@@ -5,9 +5,14 @@
   "author": "Pete Bacon Darwin",
   "license": "MIT",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "test": "karma start"
   },
   "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
     "lite-server": "^2.2.0"
   }
 }
