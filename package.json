@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "lite-server",
-    "test": "karma start"
+    "test": "karma start",
+    "ci": "karma start --single-run --browsers PhantomJS"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
