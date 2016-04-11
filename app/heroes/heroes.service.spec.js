@@ -11,7 +11,7 @@ describe('heroes.service', function() {
     return heroes;
   }
 
-  describe('getHeroes', function() {
+  describe('getHeroes()', function() {
     it('should return a promise to an array of hero objects', function() {
       var heroes = getHeroes();
       expect(heroes[0]).toEqual({ id: 0, firstName: 'Wonder', lastName: 'Woman' });
@@ -19,7 +19,7 @@ describe('heroes.service', function() {
   });
 
 
-  describe('save', function() {
+  describe('save(id, firstName, lastName)', function() {
     it('should replace the specified hero object with a new one (immutable)', function() {
       var heroes = getHeroes();
       inject(function(heroesService) {
@@ -35,7 +35,7 @@ describe('heroes.service', function() {
   });
 
 
-  describe('toggleFavourite', function() {
+  describe('toggleFavourite(hero)', function() {
     it('should toggle whether a hero is a favourite', function() {
       var heroes = getHeroes();
       inject(function(heroesService) {
@@ -47,7 +47,7 @@ describe('heroes.service', function() {
     });
   });
 
-  describe('isFavourite', function() {
+  describe('isFavourite(hero)', function() {
     it('should return true for heroes that are favourites', function() {
       var heroes = getHeroes();
       inject(function(heroesService) {
