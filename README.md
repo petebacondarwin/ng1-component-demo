@@ -11,3 +11,9 @@ Luckily we have one to hand in `lite-server`:
 npm install
 npm start
 ```
+
+## Unit Testing
+
+```
+npm test
+```
