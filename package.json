@@ -7,7 +7,7 @@
   "scripts": {
     "start": "lite-server",
     "test": "karma start",
-    "ci": "karma start --single-run --browsers Firefox"
+    "ci": "karma start --single-run --browsers Firefox --reporters dots"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
