@@ -1,66 +1,66 @@
-describe('myHeroes component', function() {
+describe('myVillains component', function() {
 
   function getComponentController() {
     var $ctrl;
-    module('myHeroes.component');
+    module('myVillains.component');
     inject(function($componentController, $rootScope) {
-      $ctrl = $componentController('myHeroes', {$scope: $rootScope});
+      $ctrl = $componentController('myVillains', {$scope: $rootScope});
     });
     return $ctrl;
   }
 
   describe('$onInit()', function() {
-    it('should load the heroes', function() {
+    it('should load the villains', function() {
       var $ctrl = getComponentController();
-      spyOn($ctrl, 'loadHeroes');
+      spyOn($ctrl, 'loadVillains');
       $ctrl.$onInit();
-      expect($ctrl.loadHeroes).toHaveBeenCalled();
+      expect($ctrl.loadVillains).toHaveBeenCalled();
     });
   });
 
-  describe('loadHeroes()', function() {
-    it('should get the heroes from the heroesService and attach them to a property', function() {
+  describe('loadVillains()', function() {
+    it('should get the villains from the villainsService and attach them to a property', function() {
       var $ctrl = getComponentController();
 
       inject(function($rootScope) {
-        $ctrl.loadHeroes();
+        $ctrl.loadVillains();
         $rootScope.$apply();
-        expect($ctrl.heroes[0]).toEqual({ id: 0, firstName: 'Wonder', lastName: 'Woman' });
+        expect($ctrl.villains[0]).toEqual({ id: 0, firstName: 'Wonder', lastName: 'Woman' });
       });
     });
   });
 
-  describe('saveHero(hero, firstName, lastName)', function() {
-    it('should call save() on the heroesService', function() {
+  describe('saveVillain(villain, firstName, lastName)', function() {
+    it('should call save() on the villainsService', function() {
       var $ctrl = getComponentController();
-      inject(function(heroesService) {
-        spyOn(heroesService, 'save');
-        $ctrl.saveHero({id: 2}, 'newFirstName', 'newLastName');
-        expect(heroesService.save).toHaveBeenCalledWith(2, 'newFirstName', 'newLastName');
+      inject(function(villainsService) {
+        spyOn(villainsService, 'save');
+        $ctrl.saveVillain({id: 2}, 'newFirstName', 'newLastName');
+        expect(villainsService.save).toHaveBeenCalledWith(2, 'newFirstName', 'newLastName');
       })
     });
   });
 
-  describe('toggleFavourite(hero)', function() {
-    it('should call toggleFavourite() on the heroesService', function() {
+  describe('toggleFavourite(villain)', function() {
+    it('should call toggleFavourite() on the villainsService', function() {
       var $ctrl = getComponentController();
-      inject(function(heroesService) {
-        var someHero = {};
-        spyOn(heroesService, 'toggleFavourite');
-        $ctrl.toggleFavourite(someHero);
-        expect(heroesService.toggleFavourite).toHaveBeenCalledWith(someHero);
+      inject(function(villainsService) {
+        var someVillain = {};
+        spyOn(villainsService, 'toggleFavourite');
+        $ctrl.toggleFavourite(someVillain);
+        expect(villainsService.toggleFavourite).toHaveBeenCalledWith(someVillain);
       });
     });
   });
 
-  describe('isFavourite(hero)', function() {
-    it('should call isFavourite() on the heroesService', function() {
+  describe('isFavourite(villain)', function() {
+    it('should call isFavourite() on the villainsService', function() {
       var $ctrl = getComponentController();
-      inject(function(heroesService) {
-        var someHero = {};
-        spyOn(heroesService, 'isFavourite');
-        $ctrl.isFavourite(someHero);
-        expect(heroesService.isFavourite).toHaveBeenCalledWith(someHero);
+      inject(function(villainsService) {
+        var someVillain = {};
+        spyOn(villainsService, 'isFavourite');
+        $ctrl.isFavourite(someVillain);
+        expect(villainsService.isFavourite).toHaveBeenCalledWith(someVillain);
       });
     });
   });

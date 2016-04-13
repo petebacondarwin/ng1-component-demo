@@ -1,7 +1,7 @@
 {
-  "name": "hero-component-example",
+  "name": "ng1-component-example",
   "version": "1.0.0",
-  "description": "Demo project for ng-conf",
+  "description": "Demo project for ng-conf 2016",
   "author": "Pete Bacon Darwin",
   "license": "MIT",
   "scripts": {

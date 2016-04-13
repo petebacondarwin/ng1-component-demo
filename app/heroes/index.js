@@ -1,6 +1,6 @@
-angular.module('heroes', [
-  'heroes.service',
-  'myHeroes.component',
-  'myHero.component',
-  'myFavouriteHeroes.component'
+angular.module('villains', [
+  'villains.service',
+  'myVillains.component',
+  'myVillain.component',
+  'myFavouriteVillains.component'
 ]);

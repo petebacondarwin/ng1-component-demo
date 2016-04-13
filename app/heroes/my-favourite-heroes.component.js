@@ -1,23 +1,23 @@
-angular.module('myFavouriteHeroes.component', ['heroes.service'])
+angular.module('myFavouriteVillains.component', ['villains.service'])
 
-.component('myFavouriteHeroes', {
+.component('myFavouriteVillains', {
   template:
   '<div>' +
     '<h2>Favourites</h2>' +
-    '<div ng-repeat="hero in $ctrl.heroes | filter : $ctrl.isFavourite">{{ hero.firstName }} {{ hero.lastName }}</div>' +
+    '<div ng-repeat="villain in $ctrl.villains | filter : $ctrl.isFavourite">{{ villain.firstName }} {{ villain.lastName }}</div>' +
   '</div>',
-  controller: MyFavouriteHeroes
+  controller: MyFavouriteVillains
 });
 
-function MyFavouriteHeroes(heroesService) {
+function MyFavouriteVillains(villainsService) {
   this.$onInit = function() {
     var _this = this;
-    heroesService.getHeroes().then(function(heroes) {
-      _this.heroes = heroes;
+    villainsService.getVillains().then(function(villains) {
+      _this.villains = villains;
     });
   };
-  this.isFavourite = function(hero) {
-    return heroesService.isFavourite(hero);
+  this.isFavourite = function(villain) {
+    return villainsService.isFavourite(villain);
   };
 }
-MyFavouriteHeroes.$inject = ['heroesService'];
+MyFavouriteVillains.$inject = ['villainsService'];

@@ -1,12 +1,12 @@
-angular.module('heroes.service', [])
+angular.module('villains.service', [])
 
-.factory('heroesService', ['$q', function($q) {
+.factory('villainsService', ['$q', function($q) {
 
-  var HEROES = [ // Simulate async loading
-    { id: 0, firstName: 'Wonder', lastName: 'Woman' },
-    { id: 1, firstName: 'Super', lastName: 'Man' },
-    { id: 2, firstName: 'Bat', lastName: 'Girl' },
-    { id: 3, firstName: 'Spider', lastName: 'Man' }
+  var VILLAINS = [ // Simulate async loading
+    { id: 0, firstName: 'Poison', lastName: 'Ivy' },
+    { id: 1, firstName: 'Doctor', lastName: 'Octopus' },
+    { id: 2, firstName: 'Mystique', lastName: '' },
+    { id: 3, firstName: 'Green', lastName: 'Goblin' }
   ];
   var favourites = {
     1: true,
@@ -14,20 +14,20 @@ angular.module('heroes.service', [])
   };
 
   return {
-    getHeroes: function() {
-      return $q.when(HEROES);
+    getVillains: function() {
+      return $q.when(VILLAINS);
     },
     save: function(id, firstName, lastName) {
-      // Find the hero and replace it with the new data
+      // Find the villain and replace it with the new data
       var index = 0;
-      while(index < HEROES.length && HEROES[index].id !== id) { index += 1; }
-      HEROES.splice(index, 1, { id: id, firstName: firstName, lastName: lastName});
+      while(index < VILLAINS.length && VILLAINS[index].id !== id) { index += 1; }
+      VILLAINS.splice(index, 1, { id: id, firstName: firstName, lastName: lastName});
     },
-    toggleFavourite: function(hero) {
-      favourites[hero.id] = !favourites[hero.id];
+    toggleFavourite: function(villain) {
+      favourites[villain.id] = !favourites[villain.id];
     },
-    isFavourite: function(hero) {
-      return favourites[hero.id];
+    isFavourite: function(villain) {
+      return favourites[villain.id];
     }
   };
 }])

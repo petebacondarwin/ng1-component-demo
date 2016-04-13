@@ -1,4 +1,4 @@
-# Heroes Component Demo
+# Angular 1.5 Component Demo
 
 A demo application for ng-conf 2016 to demonstrate a component based architecture with Angular 1.5
 
