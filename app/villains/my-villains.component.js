@@ -1,4 +1,8 @@
-angular.module('myVillains.component', ['villains.service', 'myFavouriteVillains.component'])
+angular.module('myVillains.component', [
+  'villains.service',
+  'myVillain.component',
+  'myFavouriteVillains.component'
+])
 
 .component('myVillains', {
   template:

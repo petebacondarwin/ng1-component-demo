@@ -3,8 +3,8 @@ describe('myVillain component', function() {
   function getComponentController() {
     var $ctrl;
     module('myVillain.component');
-    inject(function($componentController, $rootScope) {
-      $ctrl = $componentController('myVillain', {$scope: $rootScope});
+    inject(function($componentController) {
+      $ctrl = $componentController('myVillain');
     });
     return $ctrl;
   }
