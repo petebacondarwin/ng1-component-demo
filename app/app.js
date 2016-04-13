@@ -16,7 +16,8 @@ angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component',
     { path: '/villains', component: 'myVillains', name: 'EditVillains' }
   ],
   template:
-    '<h1>Villains App</h1>' +
+    '<img src="assets/images/villain.svg" class="logo" title="by J.J. - http://www.jjmccullough.com/">' +
+    '<h1>Villainous<br>App</h1>' +
     '<my-navigation-menu></my-navigation-menu>' +
     '<ng-outlet></ng-outlet>'
 });

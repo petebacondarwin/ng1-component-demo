@@ -14,7 +14,7 @@ describe('villains.service', function() {
   describe('getVillains()', function() {
     it('should return a promise to an array of villain objects', function() {
       var villains = getVillains();
-      expect(villains[0]).toEqual({ id: 0, firstName: 'Wonder', lastName: 'Woman' });
+      expect(villains[0]).toEqual({ id: 0, firstName: 'Poison', lastName: 'Ivy' });
     });
   });
 
@@ -24,12 +24,12 @@ describe('villains.service', function() {
       var villains = getVillains();
       inject(function(villainsService) {
         var superMan = villains[1];
-        villainsService.save(superMan.id, "SUPER", "MAN");
+        villainsService.save(superMan.id, "Otto", "Octavius");
 
         // original villain is unchanged
-        expect(superMan).toEqual({ id: 1, firstName: 'Super', lastName: 'Man' });
+        expect(superMan).toEqual({ id: 1, firstName: 'Doctor', lastName: 'Octopus' });
         // new object replaces original villain
-        expect(villains[1]).toEqual({ id: 1, firstName: 'SUPER', lastName: 'MAN' })
+        expect(villains[1]).toEqual({ id: 1, firstName: 'Otto', lastName: 'Octavius' })
       });
     });
   });
@@ -51,7 +51,7 @@ describe('villains.service', function() {
     it('should return true for villains that are favourites', function() {
       var villains = getVillains();
       inject(function(villainsService) {
-        // the initial favourites are Super Man and Bat Girl
+        // the initial favourites are villain 2 and 3 in the list
         expect(villainsService.isFavourite(villains[1])).toBeTruthy();
         expect(villainsService.isFavourite(villains[2])).toBeTruthy();
       });

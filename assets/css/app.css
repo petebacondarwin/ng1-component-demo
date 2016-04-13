@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'true_crimesregular';
+    src: url('../fonts/true-crimes/webfont.eot');
+    src: url('../fonts/true-crimes/webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/true-crimes/webfont.woff') format('woff'),
+         url('../fonts/true-crimes/webfont.ttf') format('truetype'),
+         url('../fonts/true-crimes/webfont.svg#true_crimesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('../fonts/roboto/medium-webfont.eot');
+    src: url('../fonts/roboto/medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/medium-webfont.woff') format('woff'),
+         url('../fonts/roboto/medium-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto/light-webfont.eot');
+    src: url('../fonts/roboto/light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/light-webfont.woff') format('woff'),
+         url('../fonts/roboto/light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 { color: #369; font-family: true_crimesregular, Arial, Helvetica, sans-serif; font-size: 72px; margin: 0; }
+h2 { color: #369; font-family: true_crimesregular, Arial, Helvetica, sans-serif; margin: 12px 0px 8px; }
+h3 { color: #444; font-weight: lighter; }
+body { margin: 2em; }
+body, input { color: #888; font-family: robotolight, Arial, Helvetica, sans-serif; }
+p { margin: 5px 0; font-family: robotolight, Arial, Helvetica, sans-serif; }
+input { font-size: 15px; }
+label { color: #888; font-family: robotomedium, Arial, Helvetica, sans-serif; }
+
+
+.logo {
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+
+nav {
+  clear: left;
+}
+nav a {
+  padding: 5px 15px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 5px;
+  display: inline-block;
+  background-color: #369;
+  color: #FFF;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+nav a:visited, a:link {
+  color: #FFF;
+}
+nav a:hover {
+  background-color: #258;
+}
+nav a.ng-link-active {
+  background-color: #C00;
+}
+nav a:hover.ng-link-active {
+  background-color: #A21
+}
+
+ul.favourites {
+  padding: 0;
+  margin: 0;
+}
+.favourites li {
+  padding: 2px 25px;
+  list-style-type: none;
+  background: no-repeat left url('../images/arrow-red.png');
+}
+
+.my-villains {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-villains .edit-list {
+  margin-right: 20px;
+}
+
+
+.my-villain {
+  margin-bottom: 5px;
+  padding: 2px 4px;
+  border: 1px solid #888;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.my-villain .full-name {
+  width: 200px;
+  height: 20px;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
