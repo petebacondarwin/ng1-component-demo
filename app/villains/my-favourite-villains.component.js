@@ -4,7 +4,9 @@ angular.module('myFavouriteVillains.component', ['villains.service'])
   template:
   '<div>' +
     '<h2>Favourites</h2>' +
-    '<div ng-repeat="villain in $ctrl.villains | filter : $ctrl.isFavourite">{{ villain.firstName }} {{ villain.lastName }}</div>' +
+    '<ul class="favourites">' +
+      '<li ng-repeat="villain in $ctrl.villains | filter : $ctrl.isFavourite">{{ villain.firstName }} {{ villain.lastName }}</li>' +
+    '</ul>' +
   '</div>',
   controller: MyFavouriteVillains
 });

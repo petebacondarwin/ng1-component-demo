@@ -25,7 +25,7 @@ describe('myVillains component', function() {
       inject(function($rootScope) {
         $ctrl.loadVillains();
         $rootScope.$apply();
-        expect($ctrl.villains[0]).toEqual({ id: 0, firstName: 'Wonder', lastName: 'Woman' });
+        expect($ctrl.villains[0]).toEqual({ id: 0, firstName: 'Poison', lastName: 'Ivy' });
       });
     });
   });
