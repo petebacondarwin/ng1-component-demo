@@ -1,10 +1,10 @@
-describe('myHero component', function() {
+describe('myVillain component', function() {
 
   function getComponentController() {
     var $ctrl;
-    module('myHero.component');
+    module('myVillain.component');
     inject(function($componentController, $rootScope) {
-      $ctrl = $componentController('myHero', {$scope: $rootScope});
+      $ctrl = $componentController('myVillain', {$scope: $rootScope});
     });
     return $ctrl;
   }
@@ -14,10 +14,10 @@ describe('myHero component', function() {
   }
 
   describe('$onChanges(changes)', function() {
-    it('should update the fullName property if the change is a hero change', function() {
+    it('should update the fullName property if the change is a villain change', function() {
       var $ctrl = getComponentController();
       $ctrl.$onChanges({
-        hero: {
+        villain: {
           currentValue: { id: 2, firstName: 'Bat', lastName: 'Girl' }
         }
       });
@@ -26,12 +26,12 @@ describe('myHero component', function() {
   });
 
   describe('nameChanged()', function() {
-    it('should call the onHeroChanged output binding, with the name info', function() {
+    it('should call the onVillainChanged output binding, with the name info', function() {
       var $ctrl = getComponentController();
-      $ctrl.onHeroChange = jasmine.createSpy('onHeroChanged');
+      $ctrl.onVillainChange = jasmine.createSpy('onVillainChanged');
       $ctrl.fullName = 'Wonder Woman';
       $ctrl.nameChanged();
-      expect($ctrl.onHeroChange).toHaveBeenCalledWith({
+      expect($ctrl.onVillainChange).toHaveBeenCalledWith({
         $event: { firstName: 'Wonder', lastName: 'Woman' }
       });
     });
@@ -39,9 +39,9 @@ describe('myHero component', function() {
 
   describe('handleKey($event)', function() {
     describe('ESC key', function() {
-      it('should reset the full name to that of the current hero object', function() {
+      it('should reset the full name to that of the current villain object', function() {
         var $ctrl = getComponentController();
-        $ctrl.hero = { firstName: 'Super', lastName: 'Man' };
+        $ctrl.villain = { firstName: 'Super', lastName: 'Man' };
         $ctrl.fullName = 'Clark Kent';
         var $event = createKeyEvent(27);
         $ctrl.handleKey($event);

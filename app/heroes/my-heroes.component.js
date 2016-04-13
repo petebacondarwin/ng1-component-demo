@@ -1,45 +1,45 @@
-angular.module('myHeroes.component', ['heroes.service', 'myFavouriteHeroes.component'])
+angular.module('myVillains.component', ['villains.service', 'myFavouriteVillains.component'])
 
-.component('myHeroes', {
+.component('myVillains', {
   template:
   '<div>' +
-    '<h2>Edit Heroes</h2>' +
+    '<h2>Edit Villains</h2>' +
     '<p>Changes are saved when you press enter or leave the edit box.<br>Cancel changes by pressing escape.</p>' +
-    '<div ng-repeat="hero in $ctrl.heroes track by hero.id">' +
-      '<my-hero ' +
-          'hero="hero" ' +
-          'is-favourite="$ctrl.isFavourite(hero)" ' +
-          'on-hero-change="$ctrl.saveHero(hero, $event.firstName, $event.lastName)"' +
-          'on-is-favourite-change="$ctrl.toggleFavourite(hero)">' +
-      '</my-hero>' +
+    '<div ng-repeat="villain in $ctrl.villains track by villain.id">' +
+      '<my-villain ' +
+          'villain="villain" ' +
+          'is-favourite="$ctrl.isFavourite(villain)" ' +
+          'on-villain-change="$ctrl.saveVillain(villain, $event.firstName, $event.lastName)"' +
+          'on-is-favourite-change="$ctrl.toggleFavourite(villain)">' +
+      '</my-villain>' +
     '</div>' +
-    '<my-favourite-heroes></my-favourite-heroes>' +
+    '<my-favourite-villains></my-favourite-villains>' +
   '</div>',
-  controller: MyHeroes
+  controller: MyVillains
 });
 
-function MyHeroes(heroesService) {
-  this.heroesService = heroesService;
+function MyVillains(villainsService) {
+  this.villainsService = villainsService;
 }
-MyHeroes.$inject = ['heroesService'];
+MyVillains.$inject = ['villainsService'];
 
-MyHeroes.prototype = {
+MyVillains.prototype = {
   $onInit: function() {
-    this.loadHeroes();
+    this.loadVillains();
   },
-  loadHeroes: function() {
+  loadVillains: function() {
     var _this = this;
-    this.heroesService.getHeroes().then(function(heroes) {
-      _this.heroes = heroes;
+    this.villainsService.getVillains().then(function(villains) {
+      _this.villains = villains;
     });
   },
-  saveHero: function(hero, firstName, lastName) {
-    this.heroesService.save(hero.id, firstName, lastName);
+  saveVillain: function(villain, firstName, lastName) {
+    this.villainsService.save(villain.id, firstName, lastName);
   },
-  toggleFavourite: function(hero) {
-    this.heroesService.toggleFavourite(hero);
+  toggleFavourite: function(villain) {
+    this.villainsService.toggleFavourite(villain);
   },
-  isFavourite: function(hero) {
-    return this.heroesService.isFavourite(hero);
+  isFavourite: function(villain) {
+    return this.villainsService.isFavourite(villain);
   }
 };

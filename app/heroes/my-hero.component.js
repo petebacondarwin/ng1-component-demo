@@ -1,6 +1,6 @@
-angular.module('myHero.component', [])
+angular.module('myVillain.component', [])
 
-.component('myHero', {
+.component('myVillain', {
   template:
     '<div>' +
       '<label>Name: ' +
@@ -12,29 +12,29 @@ angular.module('myHero.component', [])
       '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onIsFavouriteChange()"></label>' +
     '</div>',
   bindings: {
-    hero: '<',
-    onHeroChange: '&',
+    villain: '<',
+    onVillainChange: '&',
     isFavourite: '<',
     onIsFavouriteChange: '&'
   },
-  controller: MyHero
+  controller: MyVillain
 });
 
-function MyHero() {}
+function MyVillain() {}
 
-MyHero.prototype = {
+MyVillain.prototype = {
   $onChanges: function(changes) {
-    if (changes.hero) {
-      this.fullName = getFullName(changes.hero.currentValue);
+    if (changes.villain) {
+      this.fullName = getFullName(changes.villain.currentValue);
     }
   },
   nameChanged: function() {
-    this.onHeroChange({$event: splitName(this.fullName)});
+    this.onVillainChange({$event: splitName(this.fullName)});
   },
   handleKey: function($event) {
     switch($event.keyCode) {
       case 27: // ESC
-        this.fullName = getFullName(this.hero);
+        this.fullName = getFullName(this.villain);
         $event.preventDefault();
         break;
       case 13: // ENTER
@@ -50,6 +50,6 @@ function splitName(name) {
   return { firstName: match[1], lastName: match[2] };
 }
 
-function getFullName(hero) {
-  return [hero.firstName, hero.lastName].join(' ').trim();
+function getFullName(villain) {
+  return [villain.firstName, villain.lastName].join(' ').trim();
 }

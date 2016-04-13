@@ -1,9 +1,9 @@
-angular.module('myDashboard.component', ['myFavouriteHeroes.component'])
+angular.module('myDashboard.component', ['myFavouriteVillains.component'])
 
 .component('myDashboard', {
   template:
     '<div>' +
-      '<p>Welcome to the heroes app</p>' +
-      '<my-favourite-heroes></my-favourite-heroes>' +
+      '<p>Welcome to the villains app</p>' +
+      '<my-favourite-villains></my-favourite-villains>' +
     '</div>'
 });
