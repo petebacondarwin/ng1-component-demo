@@ -1,0 +1,15 @@
+french-toast {
+  background-color: orange;
+  border-radius: 50px;
+  bottom: 0;
+  box-shadow: 0 1px 15px;
+  color: darkorchid;
+  display: inline-block;
+  font-family: true_crimesregular, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 10px;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+}

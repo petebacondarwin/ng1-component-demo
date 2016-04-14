@@ -1,4 +1,8 @@
-angular.module('myVillains.component', ['villains.service', 'myFavouriteVillains.component'])
+angular.module('myVillains.component', [
+  'frenchToast',
+  'villains.service',
+  'myFavouriteVillains.component'
+])
 
 .component('myVillains', {
   template:
@@ -20,10 +24,11 @@ angular.module('myVillains.component', ['villains.service', 'myFavouriteVillains
   controller: MyVillains
 });
 
-function MyVillains(villainsService) {
+function MyVillains(villainsService, FrenchToaster) {
   this.villainsService = villainsService;
+  this.FrenchToaster = FrenchToaster;
 }
-MyVillains.$inject = ['villainsService'];
+MyVillains.$inject = ['villainsService', 'FrenchToaster'];
 
 MyVillains.prototype = {
   $onInit: function() {
@@ -37,6 +42,7 @@ MyVillains.prototype = {
   },
   saveVillain: function(villain, firstName, lastName) {
     this.villainsService.save(villain.id, firstName, lastName);
+    this.FrenchToaster.makeMeAFrenchToast(/* because */'The villain was saved successfully !');
   },
   toggleFavourite: function(villain) {
     this.villainsService.toggleFavourite(villain);
