@@ -55,14 +55,13 @@ describe('myVillains component', function() {
       });
     });
   });
+
+  function getComponentController() {
+    var $ctrl;
+    module('myVillains.component');
+    inject(function($componentController) {
+      $ctrl = $componentController('myVillains');
+    });
+    return $ctrl;
+  }
 });
-
-function getComponentController() {
-  var $ctrl;
-  module('myVillains.component');
-  inject(function($componentController) {
-    $ctrl = $componentController('myVillains');
-  });
-  return $ctrl;
-}
-
