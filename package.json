@@ -8,7 +8,10 @@
   "scripts": {
     "start": "lite-server",
     "test": "karma start",
-    "ci": "karma start --single-run --browsers Firefox --reporters dots"
+    "ci": "karma start --single-run --browsers Firefox --reporters dots",
+    "update-webdriver": "webdriver-manager update",
+    "pree2e": "npm run update-webdriver",
+    "e2e": "protractor e2e-tests/protractor.conf.js"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
@@ -16,6 +19,7 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
-    "lite-server": "^2.2.0"
+    "lite-server": "^2.2.0",
+    "protractor": "^3.2.2"
   }
 }

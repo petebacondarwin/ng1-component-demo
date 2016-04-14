@@ -4,7 +4,7 @@ A demo application for ng-conf 2016 to demonstrate a component based architectur
 
 ## Running
 
-You just need a http-server setup to rewrite to `index.html`.
+You just need a web server, which is setup to rewrite to `index.html`.
 Luckily we have one to hand in `lite-server`:
 
 ```
@@ -16,4 +16,13 @@ npm start
 
 ```
 npm test
+```
+
+## End-to-End Testing
+
+You also need the web server to be serving the app while running the E2E tests.
+Use `npm start` (on a separate terminal window) to start the web server first.
+
+```
+npm run e2e
 ```
