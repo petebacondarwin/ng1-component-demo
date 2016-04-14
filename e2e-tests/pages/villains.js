@@ -57,11 +57,6 @@ VillainsPage.prototype.get = function() {
   return browser.get('/villains');
 };
 
-VillainsPage.prototype.hasToast = function() {
-  return element(by.css('french-toast')).
-    isPresent();
-};
-
 VillainsPage.prototype.isFavourite = function(name) {
   return this.
     _getFavouriteVillainsByName(name).
