@@ -37,6 +37,7 @@ h3 { color: #444; font-weight: lighter; }
 body { margin: 2em; }
 body, input { color: #888; font-family: robotolight, Arial, Helvetica, sans-serif; }
 p { margin: 5px 0; font-family: robotolight, Arial, Helvetica, sans-serif; }
+strong { font-family: robotomedium, Arial, Helvetica, sans-serif; }
 input { font-size: 15px; }
 label { color: #888; font-family: robotomedium, Arial, Helvetica, sans-serif; }
 
