@@ -18,7 +18,7 @@ describe('villains.service', function() {
         // original villain is unchanged
         expect(superMan).toEqual({ id: 1, firstName: 'Doctor', lastName: 'Octopus' });
         // new object replaces original villain
-        expect(villains[1]).toEqual({ id: 1, firstName: 'Otto', lastName: 'Octavius' })
+        expect(villains[1]).toEqual({ id: 1, firstName: 'Otto', lastName: 'Octavius' });
       });
     });
   });

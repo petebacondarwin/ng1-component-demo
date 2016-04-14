@@ -30,4 +30,4 @@ angular.module('villains.service', [])
       return favourites[villain.id];
     }
   };
-}])
+}]);

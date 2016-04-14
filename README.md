@@ -18,6 +18,12 @@ npm start
 npm test
 ```
 
+## Code Linting
+
+```
+npm run lint
+```
+
 ## End-to-End Testing
 
 You also need the web server to be serving the app while running the E2E tests.
