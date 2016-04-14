@@ -28,7 +28,7 @@ describe('myVillains component', function() {
         spyOn(villainsService, 'save');
         $ctrl.saveVillain({id: 2}, 'newFirstName', 'newLastName');
         expect(villainsService.save).toHaveBeenCalledWith(2, 'newFirstName', 'newLastName');
-      })
+      });
     });
   });
 

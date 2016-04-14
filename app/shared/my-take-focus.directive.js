@@ -7,5 +7,5 @@ angular.module('myTakeFocus.directive', [])
         element[0].focus();
       }
     });
-  }
+  };
 });
