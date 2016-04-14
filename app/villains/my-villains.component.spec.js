@@ -1,14 +1,5 @@
 describe('myVillains component', function() {
 
-  function getComponentController() {
-    var $ctrl;
-    module('myVillains.component');
-    inject(function($componentController, $rootScope) {
-      $ctrl = $componentController('myVillains', {$scope: $rootScope});
-    });
-    return $ctrl;
-  }
-
   describe('$onInit()', function() {
     it('should load the villains', function() {
       var $ctrl = getComponentController();
@@ -65,3 +56,13 @@ describe('myVillains component', function() {
     });
   });
 });
+
+function getComponentController() {
+  var $ctrl;
+  module('myVillains.component');
+  inject(function($componentController) {
+    $ctrl = $componentController('myVillains');
+  });
+  return $ctrl;
+}
+

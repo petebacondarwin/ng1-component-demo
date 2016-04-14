@@ -1,16 +1,5 @@
 describe('villains.service', function() {
 
-  function getVillains() {
-    var villains;
-    module('villains.service');
-    inject(function(villainsService, $rootScope) {
-
-      villainsService.getVillains().then(function(val) { villains = val; });
-      $rootScope.$apply();
-    });
-    return villains;
-  }
-
   describe('getVillains()', function() {
     it('should return a promise to an array of villain objects', function() {
       var villains = getVillains();
@@ -58,3 +47,13 @@ describe('villains.service', function() {
     });
   });
 });
+
+function getVillains() {
+  var villains;
+  module('villains.service');
+  inject(function(villainsService, $rootScope) {
+    villainsService.getVillains().then(function(val) { villains = val; });
+    $rootScope.$apply();
+  });
+  return villains;
+}

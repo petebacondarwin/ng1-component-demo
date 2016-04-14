@@ -7,10 +7,10 @@ angular.module('myVillains.component', ['villains.service', 'myFavouriteVillains
       '<h2>Edit Villains</h2>' +
       '<div ng-repeat="villain in $ctrl.villains track by villain.id">' +
         '<my-villain ' +
-            'villain="villain" ' +
-            'is-favourite="$ctrl.isFavourite(villain)" ' +
-            'on-villain-change="$ctrl.saveVillain(villain, $event.firstName, $event.lastName)"' +
-            'on-is-favourite-change="$ctrl.toggleFavourite(villain)">' +
+          'villain="villain" ' +
+          'is-favourite="$ctrl.isFavourite(villain)" ' +
+          'on-villain-change="$ctrl.saveVillain(villain, $event.firstName, $event.lastName)"' +
+          'on-is-favourite-change="$ctrl.toggleFavourite(villain)">' +
         '</my-villain>' +
       '</div>' +
       '<p>Click on a villain\s name to change it.<br>Changes are saved when you press enter or leave the edit box.<br>Cancel changes by pressing escape.</p>' +
