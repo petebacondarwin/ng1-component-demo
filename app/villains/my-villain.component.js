@@ -1,14 +1,4 @@
-angular.module('myVillain.component', [])
-
-.directive('myTakeFocus', function() {
-  return function link(scope, element, attr) {
-    scope.$watch(attr.myTakeFocus, function(val) {
-      if (val) {
-        element[0].focus();
-      }
-    });
-  }
-})
+angular.module('myVillain.component', ['myTakeFocus.directive'])
 
 .component('myVillain', {
   template:
