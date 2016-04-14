@@ -30,9 +30,6 @@ describe('The Villains App', function() {
 
 
       describe('Editing a villain\'s name', function() {
-        beforeEach(function() { browser.ignoreSynchronization = true; });
-        afterEach(function() { browser.ignoreSynchronization = false; });
-
 
         it('should save the name on <BLUR>', function() {
           expect(page.isFavourite('Doctor Octopus')).toBe(true);
@@ -64,20 +61,6 @@ describe('The Villains App', function() {
 
           expect(page.isFavourite('Doctor Octopus')).toBe(true);
           expect(page.isFavourite('Megatron')).toBe(false);
-        });
-
-
-        it('should display a toast when the name has been saved', function() {
-          var postEditAction = VillainsPage.PostEditAction.NONE;
-          var input = page.editVillainName('Doctor Octopus', 'Megatron', postEditAction);
-
-          expect(page.hasToast()).toBe(false);
-
-          input.sendKeys(protractor.Key.ENTER);
-          expect(page.hasToast()).toBe(true);
-
-          browser.ignoreSynchronization = false;
-          expect(page.hasToast()).toBe(false);
         });
       });
     });
