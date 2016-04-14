@@ -57,18 +57,18 @@ describe('myVillain component', function() {
       });
     });
   });
+
+  function getComponentController() {
+    var $ctrl;
+    module('myVillain.component');
+    inject(function($componentController) {
+      $ctrl = $componentController('myVillain');
+    });
+    return $ctrl;
+  }
+
+  function createKeyEvent(keyCode) {
+      return { keyCode: keyCode, preventDefault: jasmine.createSpy('preventDefault') };
+  }
+
 });
-
-function getComponentController() {
-  var $ctrl;
-  module('myVillain.component');
-  inject(function($componentController) {
-    $ctrl = $componentController('myVillain');
-  });
-  return $ctrl;
-}
-
-function createKeyEvent(keyCode) {
-    return { keyCode: keyCode, preventDefault: jasmine.createSpy('preventDefault') };
-}
-
