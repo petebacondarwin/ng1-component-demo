@@ -1,18 +1,5 @@
 describe('myVillain component', function() {
 
-  function getComponentController() {
-    var $ctrl;
-    module('myVillain.component');
-    inject(function($componentController) {
-      $ctrl = $componentController('myVillain');
-    });
-    return $ctrl;
-  }
-
-  function createKeyEvent(keyCode) {
-     return { keyCode: keyCode, preventDefault: jasmine.createSpy('preventDefault') };
-  }
-
   describe('$onChanges(changes)', function() {
     it('should update the fullName property if the change is a villain change', function() {
       var $ctrl = getComponentController();
@@ -71,3 +58,17 @@ describe('myVillain component', function() {
     });
   });
 });
+
+function getComponentController() {
+  var $ctrl;
+  module('myVillain.component');
+  inject(function($componentController) {
+    $ctrl = $componentController('myVillain');
+  });
+  return $ctrl;
+}
+
+function createKeyEvent(keyCode) {
+    return { keyCode: keyCode, preventDefault: jasmine.createSpy('preventDefault') };
+}
+
