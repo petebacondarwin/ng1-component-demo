@@ -2,6 +2,7 @@
   "name": "ng1-component-example",
   "version": "1.0.0",
   "description": "Demo project for ng-conf 2016",
+  "repository": "https://github.com/petebacondarwin/ng1-component-demo.git",
   "author": "Pete Bacon Darwin",
   "license": "MIT",
   "scripts": {
