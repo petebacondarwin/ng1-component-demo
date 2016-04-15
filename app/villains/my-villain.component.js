@@ -3,13 +3,25 @@ angular.module('myVillain.component', ['myTakeFocus.directive'])
 .component('myVillain', {
   template:
     '<div class="my-villain">' +
-      '<span class="full-name" ng-if="!$ctrl.editing" ng-click="$ctrl.editing=true">{{$ctrl.fullName}}</span>' +
-      '<input class="full-name" type="text" my-take-focus="$ctrl.editing" ' +
+
+      '<span class="full-name" ' +
+            'ng-if="!$ctrl.editing" ' +
+            'ng-click="$ctrl.editing=true">' +
+              '{{$ctrl.fullName}}' +
+      '</span>' +
+
+      '<input class="full-name" type="text" ' +
+              'my-take-focus="$ctrl.editing" ' +
               'ng-if="$ctrl.editing"' +
               'ng-model="$ctrl.fullName" ' +
               'ng-blur="$ctrl.nameChanged()" ' +
               'ng-keyup="$ctrl.handleKey($event)">&nbsp;&nbsp;' +
-      '<label>Like: <input type="checkbox" ng-model="$ctrl.isFavourite" ng-click="$ctrl.onIsFavouriteChange()"></label>' +
+
+      '<label>Like: ' +
+        '<input type="checkbox" ' +
+               'ng-model="$ctrl.isFavourite" ' +
+               'ng-click="$ctrl.onIsFavouriteChange()">' +
+      '</label>' +
     '</div>',
   bindings: {
     villain: '<',
