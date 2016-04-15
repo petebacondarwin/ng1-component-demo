@@ -1,4 +1,9 @@
-angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component', 'myNavigationMenu.component', 'villains'])
+angular.module('myApp.component', [
+  'ngComponentRouter',
+  'myDashboard.component',
+  'myNavigationMenu.component',
+  'villains'
+])
 
 .config(['$locationProvider', function($locationProvider) {
   $locationProvider.html5Mode(true);
@@ -17,7 +22,7 @@ angular.module('myApp.component', ['ngComponentRouter', 'myDashboard.component',
   ],
   template:
     '<img src="assets/images/villain.svg" class="logo" title="by J.J. - http://www.jjmccullough.com/">' +
-    '<h1>Villainous<br>App</h1>' +
+    '<h1>Villainy<br>App</h1>' +
     '<my-navigation-menu></my-navigation-menu>' +
     '<ng-outlet></ng-outlet>'
 });
